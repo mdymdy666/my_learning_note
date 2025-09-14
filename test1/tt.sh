@@ -1,0 +1,1 @@
+echo "www\n" >> /reactor/test1/bb.text

@@ -1,0 +1,12 @@
+run	启动程序（可带命令行参数，如run 10）	r
+break 行号	在指定行设置断点	b
+break 函数名	在指定函数入口设置断点	b
+next	单步执行（不进入函数内部）	n
+step	单步执行（进入函数内部）	s
+print 变量	查看变量值	p
+continue	从当前断点继续执行到下一个断点	c
+backtrace	查看函数调用栈（崩溃时定位位置）	bt
+frame 编号	切换到调用栈中的指定帧（查看上下文）	f
+quit	退出 gdb	q
+list	显示当前代码附近的内容	l
+delete 断点号	删除指定断点（断点号可通过info break查看）	d

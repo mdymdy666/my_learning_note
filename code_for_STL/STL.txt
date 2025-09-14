@@ -1,0 +1,108 @@
+以下是更全面的 STL 核心关键词（覆盖容器、算法、迭代器、仿函数、适配器等全组件，按实际代码中出现频率 / 重要性排序）：
+一、容器（含所有主要类型）
+基础序列容器
+vector（动态数组，最核心）
+list（双向链表）
+deque（双端队列）
+array（固定大小数组，C++11）
+forward_list（单向链表，C++11）
+有序关联容器
+map（键值对，key 唯一有序）
+set（唯一元素，有序）
+multimap（key 可重复，有序）
+multiset（元素可重复，有序）
+无序关联容器（C++11+）
+unordered_map（哈希键值对，无序）
+unordered_set（哈希唯一元素，无序）
+unordered_multimap（哈希 key 可重复）
+unordered_multiset（哈希元素可重复）
+容器适配器
+stack（栈，基于 deque/list/vector）
+queue（队列，基于 deque/list）
+priority_queue（优先队列，基于 vector/deque）
+二、算法（含修改 / 非修改 / 排序 / 数值等全类别）
+核心基础算法
+sort（排序，支持自定义比较）
+find（查找元素）
+for_each（遍历并执行操作）
+erase（删除元素，容器成员函数 + 算法）
+insert（插入元素，容器成员函数）
+非修改序列算法
+find_if（按条件查找）
+count（统计元素次数）
+count_if（按条件统计）
+equal（比较两容器是否相等）
+mismatch（查找两容器不匹配位置）
+修改序列算法
+copy（复制元素）
+copy_if（按条件复制）
+remove（移除指定值元素）
+remove_if（按条件移除）
+reverse（反转元素顺序）
+unique（去重连续重复元素）
+swap（交换元素 / 容器）
+fill（填充元素）
+transform（元素转换）
+排序及相关算法
+stable_sort（稳定排序）
+partial_sort（部分排序前 n 元素）
+nth_element（定位第 n 大 / 小元素）
+merge（合并两个有序容器）
+partition（按条件分区）
+数值算法（需<numeric>）
+accumulate（累加 / 聚合）
+inner_product（内积计算）
+adjacent_difference（相邻元素差）
+iota（生成递增序列，C++11）
+三、迭代器（全类型及操作）
+迭代器获取
+begin()/end()（正向迭代器首尾）
+rbegin()/rend()（反向迭代器首尾）
+cbegin()/cend()（const 正向迭代器，C++11）
+crbegin()/crend()（const 反向迭代器，C++11）
+迭代器类型
+iterator（正向迭代器）
+const_iterator（常量正向迭代器）
+reverse_iterator（反向迭代器）
+const_reverse_iterator（常量反向迭代器）
+迭代器辅助
+auto（自动推导迭代器类型，简化代码）
+distance（计算两迭代器距离）
+advance（移动迭代器指定步数）
+四、仿函数与函数对象
+标准仿函数（<functional>）
+less<T>（小于，默认排序）
+greater<T>（大于，反向排序）
+equal_to<T>（等于）
+not_equal_to<T>（不等于）
+logical_and<T>/logical_or<T>（逻辑与 / 或）
+函数对象工具
+自定义函数对象（重载operator()的类）
+ptr_fun（函数指针转函数对象，C++11 后逐渐被function替代）
+mem_fn（成员函数指针转函数对象，C++11）
+五、适配器（全类型）
+容器适配器配置
+底层容器指定（如stack<vector<int>>、queue<list<int>>）
+迭代器适配器
+back_inserter（尾部插入迭代器）
+front_inserter（头部插入迭代器）
+inserter（指定位置插入迭代器）
+函数适配器（C++11+）
+bind（参数绑定，生成新可调用对象）
+not1/not2（一元 / 二元仿函数取反）
+function（通用函数包装器，可存储函数 / 对象 /lambda，C++11）
+六、容器常用成员函数（高频操作）
+push_back/emplace_back（尾部插入，后者直接构造，C++11）
+push_front/emplace_front（头部插入，list/deque 等支持）
+pop_back/pop_front（尾部 / 头部删除）
+size()（元素数量）
+empty()（判断是否为空）
+clear()（清空容器）
+resize()（调整容器大小）
+at()（带边界检查的元素访问）
+[]（随机访问，vector/deque/map 等支持）
+find（关联容器成员函数，比算法find更高效）
+七、分配器（底层支持）
+allocator（默认分配器）
+自定义分配器（需实现allocate()/deallocate()等接口）
+以上覆盖了 STL 从基础到进阶的核心关键词，既包含最常用的vector、sort、begin()等，也补充了forward_list、iota、emplace_back等细节类型和操作，满足全面性需求。
